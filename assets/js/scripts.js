@@ -1,9 +1,24 @@
-/* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-function myFunction() {
-    var x = document.getElementById("navbar");
-    if (x.className === "topnav") {
-        x.className += " responsive";
+// Navigation menu and icon
+$('.menu').on('click', function () {
+    if ($('.grid-main').hasClass('is-open')) {
+        $('.menu').removeClass('is-active');
+        $('.grid-main').removeClass('is-open');
+        $('.sidebar').removeClass('animated bounceInRight');
+
     } else {
-        x.className = "topnav";
+        $('.menu').addClass('is-active');
+        $('.grid-main').addClass('is-open');
+        $('.sidebar').addClass('animated bounceInRight');
     }
-}
+
+});
+
+
+
+// Navigation color on scroll
+
+$('.menu-wrapper').waypoint(function () {
+    $('.menu-wrapper').addClass('nav-bg animated bounceIn');
+}, {
+    offset: '-10%'
+});

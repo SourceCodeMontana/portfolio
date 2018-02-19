@@ -1,0 +1,22 @@
+/* Grid */
+.grid-main {
+    height: 100%;
+    background-color: var(--white);
+    z-index: 1;
+    @include lg {
+        margin-left: 0;
+        z-index: 3;
+    }
+}
+
+.grid-main:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    display: block;
+    background: #3a4043;
+    z-index: 1;
+}

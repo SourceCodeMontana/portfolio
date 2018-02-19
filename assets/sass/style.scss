@@ -1,0 +1,269 @@
+// Version 0.5 
+// Author - Micaiah Martin
+// Title - Source Code MT website
+/* variables */
+@import 'variables/colors';
+@import 'components/mobile-mixins';
+@import 'base/reset';
+@import 'base/global';
+@import 'base/grid';
+@import 'components/sidebar';
+@import 'components/buttons';
+@import 'components/contact';
+
+
+/* Content */
+
+.content {
+    position: relative;
+    margin-left: 300px;
+    display: grid;
+    grid-template-rows: repeat(100px, minmax(100px, 1fr));
+    grid-auto-flow: row;
+    grid-gap: 50px 20px;
+    z-index: 2;
+    -webkit-transition: 0.35s;
+    -moz-transition: 0.35s;
+    transition: 0.35s;
+    background-color: var(--white);
+
+}
+
+.fullsize-wrapper {
+    color: var(--white);
+    height: 100vh;
+    display: grid;
+    grid-gap: 20px 0;
+    /* background-color: var(--black); */
+    background-color: var(--main-color);
+}
+
+.main-header {
+    justify-self: center;
+    align-self: end;
+}
+
+.main-header span {
+    /* color: var(--main-color); */
+    color: var(--black);
+}
+
+.main-header i {
+    font-family: 'Cantarell', sans-serif;
+    font-weight: 100;
+}
+
+.intro {
+    text-align: center;
+    color: var(--grey);
+}
+
+.intro span {
+    color: var(--bg-color-accent-light);
+    box-shadow: inset 0 -2px 0 var(--bg-color-accent);
+}
+
+.hero {
+    justify-self: center;
+}
+
+.hero h3 {
+    font-size: 2.5em;
+    border-bottom: 2px solid var(--bg-color-accent-light);
+}
+
+
+/* SERVICES */
+
+.services {
+    background-color: var(--white);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 330px));
+    justify-content: center;
+    margin-bottom: 5em;
+    grid-gap: 10px
+}
+
+.service-item {
+    justify-items: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    align-self: start;
+}
+
+.service-icon {
+    width: 175px;
+    height: 175px;
+    border-radius: 100%;
+    text-align: center;
+    font-size: 3em;
+    line-height: 175px;
+    transition: ease 0.3s;
+}
+
+.wd-icon {
+    background: var(--bg-color-accent-light);
+    border: 3px solid var(--bg-color-accent);
+    color: var(--bg-color-accent);
+}
+
+.wd-icon:hover {
+    color: var(--bg-color-accent-light);
+    background-color: var(--bg-color-accent);
+    border-color: var(--bg-color-accent-light);
+}
+
+.ds-icon {
+    background: var(--main-color);
+    border: 3px solid var(--bg-color-dark);
+    color: var(--bg-color-dark);
+}
+
+.ds-icon:hover {
+    background: var(--bg-color-dark);
+    border-color: var(--main-color);
+    color: var(--main-color);
+}
+
+.wm-icon {
+    background: var(--white);
+    border: 3px solid var(--black);
+    color: var(--black);
+}
+
+.wm-icon:hover {
+    background: var(--black);
+    color: var(--yellow);
+    border-color: var(--yellow);
+}
+
+.service-item h4 {
+    /* padding: 20px; */
+    font-size: 1.5em;
+}
+
+.service-item p {
+    padding: 0 15px;
+}
+
+.service-item button {
+    margin-top: 20px;
+    align-self: end;
+}
+
+
+/* Portfolio */
+
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 330px));
+    grid-gap: 10px;
+    justify-content: center;
+}
+
+
+/* OVERLAY */
+
+.item {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 1;
+    grid-gap: 10px
+}
+
+.item img {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: ease-out 0.4s;
+}
+
+.item:hover .item__overlay {
+    transform: translateY(0);
+}
+
+.item:hover img {
+    transform: scale(1.5);
+}
+
+.item__overlay {
+    background: rgba(0, 0, 0, 0.3);
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    position: relative;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    transition: 0.2s;
+    transform: translateY(100%);
+}
+
+.item__overlay a {
+    color: var(--white);
+    font-size: 2em;
+}
+
+.portfolio-item {
+    display: grid;
+    justify-items: center;
+    grid-gap: 20px;
+    padding: 0 10px;
+    color: var(--black);
+}
+
+.portfolio-item h4 {
+    font-size: 2em;
+}
+
+.portfolio-items ul {}
+
+.portfolio-item ul li {
+    display: inline-block;
+    color: var(--black);
+    padding: 10px;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    align-self: center;
+    box-shadow: 0 3px 0 var(--white);
+}
+
+.portfolio-item ul li:hover {
+    box-shadow: 0 3px 0 var(--bg-color-accent-light);
+    transition: ease 0.2s;
+}
+
+
+
+/* =================== Mobile Styles ============ */
+
+@media (max-width: 768px) {
+    .navigation ul li a:hover {
+        color: var(--white);
+        box-shadow: none;
+    }
+    .content {
+        margin-left: 0;
+
+    }
+}
+
+
+/*        ================ Media Stuff For Nav ===========*/
+
+@media screen and (max-width: 980px) {
+    .grid-main.is-open {
+        overflow: hidden;
+    }
+    .grid-main.is-open .content {
+        -webkit-transform: translateX(300px);
+        -moz-transform: translateX(300px);
+        -ms-transform: translateX(300px);
+        -o-transform: translateX(300px);
+        transform: translateX(300px);
+    }
+}

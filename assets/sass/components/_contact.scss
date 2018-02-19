@@ -1,0 +1,64 @@
+/* CONTACT SECTION */
+
+.contact {
+    padding-top: 2em;
+    background: var(--black);
+    color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    margin-top: 5em;
+    @include md {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.contact h3 {
+    justify-self: center;
+    @include md {
+        justify-self: end;
+    }
+}
+
+.contact form {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-self: center;
+    grid-gap: 10px;
+    @include md {
+        grid-template-columns: 100px, 1fr;
+        justify-self: start;
+    }
+}
+
+form label {
+    grid-column: 1;
+}
+
+form input {
+    grid-column: 1;
+    justify-self: end;
+    @include md {
+        grid-column: 2;
+        justify-self: stretch;
+    }
+}
+
+.contact button {
+    justify-self: center;
+    grid-column: 1;
+    width: 300px;
+    margin: 10px;
+    background: var(--grey);
+    border-color: var(--white);
+    color: var(--white);
+    @include md {
+        justify-self: start;
+        grid-column: 2 / -1;
+    }
+}
+
+.contact button:hover {
+    background: var(--white);
+    color: var(--black);
+}
