@@ -14,7 +14,6 @@ $('.menu').on('click', function () {
 });
 
 
-
 // Navigation color on scroll
 
 $('.menu-wrapper').waypoint(function () {
