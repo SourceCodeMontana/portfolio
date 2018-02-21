@@ -10,9 +10,25 @@ $('.menu').on('click', function () {
         $('.grid-main').addClass('is-open');
         $('.sidebar').addClass('animated bounceInRight');
     }
+    console.log("menu button clicked");
 
 });
 
+// Closes menu when content is clicked
+$('.menu-close-wrapper').on('click', function () {
+    console.log("content clicked");
+    $('.menu').removeClass('is-active');
+    $('.grid-main').removeClass('is-open');
+    $('.sidebar').removeClass('animated bounceInRight');
+});
+
+// Closes menu when link is clicked
+$('.nav-primary').on('click', function () {
+    console.log("link clicked");
+    $('.menu').removeClass('is-active');
+    $('.grid-main').removeClass('is-open');
+    $('.sidebar').removeClass('animated bounceInRight');
+});
 
 // Navigation color on scroll
 
